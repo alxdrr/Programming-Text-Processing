@@ -1,2 +1,0 @@
-
-    print("Hasil Filtering:\n")
