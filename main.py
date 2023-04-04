@@ -2,7 +2,7 @@ import open_file as text
 from processing import stopword_removal, stemming, tokenize, case_folding, normalization
 from assets import dictonary
 from colorama import Fore, Style
-from representing import one_hot_encoding
+from representing import ohe_bow, bow_tfidf
 import os
 
 listOfText = text.of()
@@ -40,5 +40,11 @@ for sentence in listOfText:
     print(Fore.GREEN, "Kalimat akhir : ", result, Style.RESET_ALL)
     input("Tekan enter untuk melanjutkan")
 
-print("Representasi One Hot Encoding:")
-one_hot_encoding.ohe(document_normalized)
+print(Fore.CYAN, "Representasi One Hot Encoding:", Style.RESET_ALL)
+ohe_bow.representing(document_normalized, True)
+input("Tekan enter untuk melanjutkan")
+print(Fore.CYAN, "Representasi Bag-of-Words:", Style.RESET_ALL)
+ohe_bow.representing(document_normalized, False)
+input("Tekan enter untuk melanjutkan")
+print(Fore.CYAN, "Representasi Bag-of-Words (TFIDF):", Style.RESET_ALL)
+bow_tfidf.representing(document_normalized)

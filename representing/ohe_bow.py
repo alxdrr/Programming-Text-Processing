@@ -1,9 +1,9 @@
 from sklearn.feature_extraction.text import CountVectorizer
 import pandas as pd
 
-def ohe(documents):
+def representing(documents, bin):
     # Membuat objek CountVectorizer dengan ketentuan binary = true yang akan menghasilkan representasi biner dari dokumen, di mana nilai 1 hanya diberikan pada kata yang muncul lebih dari 1 kali, sedangkan nilai 0 diberikan pada kata yang muncul sekali atau tidak sama sekali.
-    vectorizer = CountVectorizer(binary=True)
+    vectorizer = CountVectorizer(binary=bin)
 
     # Melakukan fit transform pada data
     one_hot = vectorizer.fit_transform(documents)
