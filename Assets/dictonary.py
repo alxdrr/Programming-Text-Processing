@@ -28,7 +28,7 @@ def dic():
         'byk' : 'banyak',
         'blg' : 'bilang',
         'smpe' : 'sampai',
-        '2mgu' : 'minggu',
+        'mgu' : 'minggu',
         'seller' : 'penjual',
         'cus' : 'ayo',
         'jgn' : 'jangan',
