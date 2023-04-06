@@ -5,37 +5,33 @@ from colorama import Fore, Style
 from representing import ohe_bow, bow_tfidf
 import os
 
-listOfText = text.of()
+listOfText = text.of() # Parsing Process
 document_normalized = []
 for sentence in listOfText:
     os.system('cls')
     print(Fore.RED, "Kalimat awal :", sentence, Style.RESET_ALL)
 
-    # Case Folding Process
     print(Fore.CYAN, "Hasil Case Folding:", Style.RESET_ALL)
-    caseFolding = case_folding.cf(sentence)
+    caseFolding = case_folding.cf(sentence) # Case Folding Process
     print(caseFolding)
 
-    # Normalization Process
     normalized = normalization.nz(caseFolding, dictonary.dic())
-    print(Fore.CYAN, "Hasil Normalisasi:", Style.RESET_ALL)
+    print(Fore.CYAN, "Hasil Normalisasi:", Style.RESET_ALL) # Normalization Process
     print(normalized)
     document_normalized.append(normalized)
 
-    # Tokenizing Process
     print(Fore.CYAN, "Hasil Tokenisasi:", Style.RESET_ALL)
-    tokenized = tokenize.token(normalized)
+    tokenized = tokenize.token(normalized) # Tokenizing Process
     print(tokenized)
 
-    # Stopword Removal/Filtering Process
     print(Fore.CYAN, "Hasil Filtering:", Style.RESET_ALL)
-    filtered = stopword_removal.swr(tokenized)
+    filtered = stopword_removal.swr(tokenized) # Stopword Removal/Filtering Process
     print(filtered)
 
-    # Stemming Process
     print(Fore.CYAN, "Hasil Stemming:", Style.RESET_ALL)
-    stemmed = stemming.stm(filtered)
+    stemmed = stemming.stm(filtered) # Stemming Process
     print(stemmed)
+
     result = ' '.join(stemmed)
     print(Fore.GREEN, "Kalimat akhir : ", result, Style.RESET_ALL)
     input("Tekan enter untuk melanjutkan")
